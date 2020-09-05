@@ -1,6 +1,7 @@
 import React from "react";
 import HomePresenter from "./pages/Home";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import SearchPagePresenter from "./pages/SearchPage";
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/search">
-            {/* Search Page */}
+            <SearchPagePresenter />
           </Route>
           <Route path="/">
             <HomePresenter />

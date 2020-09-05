@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import AppIcon from "@material-ui/icons/Apps";
 import { Avatar } from "@material-ui/core";
+import Search from "./Search";
 
 const Home = styled.div`
   display: flex;
@@ -10,16 +11,16 @@ const Home = styled.div`
   height: 100vh;
 `;
 
-const Home__Header = styled.div`
+const HomeHeader = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 20px 30px;
   align-items: center;
 `;
 
-const Home__Header__Left = styled.div``;
+const HomeHeaderLeft = styled.div``;
 
-const Home__Header__Right = styled.div`
+const HomeHeaderRight = styled.div`
   display: flex;
   align-items: center;
   min-width: 13vw;
@@ -29,7 +30,7 @@ const Home__Header__Right = styled.div`
   }
 `;
 
-const Home__Header_Link = styled(Link)`
+const HomeHeaderLink = styled(Link)`
   margin-right: 20px;
   text-decoration: inherit;
   color: rgba(0, 0, 0, 0.7);
@@ -39,39 +40,41 @@ const Home__Header_Link = styled(Link)`
   }
 `;
 
-const Home__Body = styled.div`
+const HomeBody = styled.div`
   flex: 1;
   display: flex;
   margin-top: 10%;
   flex-direction: column;
 `;
 
-const LOGO_IMG = styled.img`
+const LOGOIMG = styled.img`
   object-fit: contain;
   height: 200px;
 `;
 
-const Home__InputContainer = styled.div``;
+const HomeInputContainer = styled.div``;
 
 const HomePresenter = () => {
   return (
     <Home>
-      <Home__Header>
-        <Home__Header__Left>
-          <Home__Header_Link to="/about">About</Home__Header_Link>
-          <Home__Header_Link to="/store">Store</Home__Header_Link>
-        </Home__Header__Left>
-        <Home__Header__Right>
-          <Home__Header_Link to="/gmail">Gmail</Home__Header_Link>
-          <Home__Header_Link to="/images">Images</Home__Header_Link>
+      <HomeHeader>
+        <HomeHeaderLeft>
+          <HomeHeaderLink to="/about">About</HomeHeaderLink>
+          <HomeHeaderLink to="/store">Store</HomeHeaderLink>
+        </HomeHeaderLeft>
+        <HomeHeaderRight>
+          <HomeHeaderLink to="/gmail">Gmail</HomeHeaderLink>
+          <HomeHeaderLink to="/images">Images</HomeHeaderLink>
           <AppIcon />
           <Avatar />
-        </Home__Header__Right>
-      </Home__Header>
-      <Home__Body>
-        <LOGO_IMG src="https://cdn.vox-cdn.com/thumbor/p01ezbiuDHgRFQ-htBCd7QxaYxo=/0x105:2012x1237/1600x900/cdn.vox-cdn.com/uploads/chorus_image/image/47070706/google2.0.0.jpg" />
-        <Home__InputContainer></Home__InputContainer>
-      </Home__Body>
+        </HomeHeaderRight>
+      </HomeHeader>
+      <HomeBody>
+        <LOGOIMG src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F277027375874594F09" />
+        <HomeInputContainer>
+          <Search hideButton={false} />
+        </HomeInputContainer>
+      </HomeBody>
     </Home>
   );
 };

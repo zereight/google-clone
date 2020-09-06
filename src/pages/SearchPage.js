@@ -17,14 +17,9 @@ const SearchPageHeader = styled.div`
   border-bottom: 1px solid lightgrey;
 `;
 
-const SearchPageHeaderBody = styled(Search)`
-  & > SearchInputArea {
-    margin-top: 0;
-    width: unset;
-    margin: unset;
-    max-width: unset;
-  }
-`;
+const SearchPageOptions = styled.div``;
+
+const SearchPageHeaderBody = styled(Search)``;
 
 const SearchPageResults = styled.div``;
 
@@ -53,6 +48,7 @@ const SearchPagePresenter = () => {
           />
         </Link>
         <SearchPageHeaderBody hideButton={true} />
+        <SearchPageOptions />
       </SearchPageHeader>
       <SearchPageResults></SearchPageResults>
     </SearchPage>
